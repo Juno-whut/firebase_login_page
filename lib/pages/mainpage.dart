@@ -15,9 +15,9 @@ class MainPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePage();
+            return const HomePage(); // loads homepage if user is signed in
           } else {
-            return LoginPage();
+            return const LoginPage(); // loads login page if user is not signed in
           } 
         }
       )

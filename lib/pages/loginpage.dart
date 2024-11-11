@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_login_page/service/firestore.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -47,18 +45,19 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                       // welcom message
                       const SizedBox(height: 50),
-                      Text(
+                      const Text(
                         "Hello Again",
-                        style: GoogleFonts.bebasNeue(
+                        style: TextStyle(
                           fontSize: 52,
                           fontWeight: FontWeight.bold,
-                        ),
+                        )
                       ),
                       const SizedBox(height: 10),
-                      const Text("You've been missed!", 
-                      style: TextStyle(
+                      const Text(
+                        "You've been missed!", 
+                        style: TextStyle(
                           fontSize: 20,
-                      )
+                        )
                       ),
               
                       const SizedBox(height: 20),
@@ -72,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                                   borderRadius: BorderRadius.circular(15),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.only(left: 20.0),
+                                padding: const EdgeInsets.only(left: 20.0),
                                 child: TextField(
                                   controller: _emailController,
                                     decoration: const InputDecoration(
@@ -107,6 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                           )
                       ),
+
                       const SizedBox(height: 15),
                       // Sign in button
                       Padding(
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                             decoration: BoxDecoration(
                               color: Colors.deepPurple,
                               borderRadius: BorderRadius.circular(15),
-                              ),
+                            ),
                             child: const Center(
                               child: Text(
                                 "Sign In",
@@ -132,22 +132,28 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         )
                       ),
+
                       const SizedBox(height: 15),
                       // not a member? register now
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Not a member?",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          )),
-                          Text("Register Now",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold
-                          ))
-                        ],)
-                    ],
+                          Text(
+                            "Not a member?",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold
+                            )
+                          ),
+                          Text(
+                            "Register Now",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold
+                            )
+                          )
+                        ],
+                      )
+                  ],
               ),
             )
         )
